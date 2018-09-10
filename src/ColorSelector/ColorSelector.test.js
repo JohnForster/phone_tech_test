@@ -22,7 +22,7 @@ describe('ColorSelector', () => {
   it('performs the onSquareClick function when a box is clicked', () => {
     colorSelector.find('button').first().simulate('click');
     expect(mockFunction.mock.calls[0][0]).toBe('#f00')
-  })
+  });
 
   it('displays the currentColor', () => {
     expect(colorSelector.find('p.color-name').text()).toContain('TestRed')

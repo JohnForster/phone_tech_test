@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
 import './ColorSelector.css'
 
-export class ColorSelector extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      colors: props.colors,
-      onSquareClick: props.onSquareClick,
-      currentColor: props.currentColor || 'no color found',
-    }
+export function ColorSelector(props) {
+  function handleClick(colorHex){
+    props.onSquareClick(colorHex)
   }
 
-  handleClick(colorHex){
-    this.state.onSquareClick(colorHex)
+  function generateSquares(colors) {
+    return colors.map((color) => colorSquare(color));
   }
-
-  generateSquares(colors) {
-    return colors.map((color) => this.colorSquare(color));
-  }
-  colorSquare(colorHex) {
+  function colorSquare(colorHex) {
     return <button
       key={colorHex}
       className='color-square'
       style={{backgroundColor: colorHex }}
-      onClick={() => this.handleClick(colorHex)}
+      onClick={() => handleClick(colorHex)}
     />
   }
 
-  render() {
-    return (
-      <div className='color-selector'>
-        <p>Colour: </p><p className='color-name'>{this.state.currentColor}</p>
-        {this.generateSquares(this.state.colors)}
-      </div>
-    )
-  }
+  return (
+    <div className='color-selector'>
+      <p>Colour: </p><p className='color-name'>{props.currentColor}</p>
+      {generateSquares(props.colors)}
+    </div>
+  )
 }
 
