@@ -6,7 +6,8 @@ export class ColorSelector extends Component {
     super(props);
     this.state = {
       colors: props.colors,
-      onSquareClick: props.onSquareClick
+      onSquareClick: props.onSquareClick,
+      currentColor: props.currentColor || 'no color found',
     }
   }
 
@@ -29,6 +30,7 @@ export class ColorSelector extends Component {
   render() {
     return (
       <div className='color-selector'>
+        <p>Colour: </p><p className='color-name'>{this.state.currentColor}</p>
         {this.generateSquares(this.state.colors)}
       </div>
     )
