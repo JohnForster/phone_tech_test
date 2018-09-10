@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ImageContainer } from '../ImageContainer/ImageContainer.js'
 import './OfferContainer.css'
+import {SpecsContainer} from "../SpecsContainer/SpecsContainer";
 
 export class OfferContainer extends Component {
   constructor(props){
@@ -8,6 +9,7 @@ export class OfferContainer extends Component {
     const phoneData = props.data;
     this.state = {
       groupName: phoneData.groupName,
+      rating: phoneData.rating,
       devices: phoneData.deviceSummary,
       activeDevice: phoneData.deviceSummary[0],
     };
@@ -17,8 +19,12 @@ export class OfferContainer extends Component {
     const imageId = "PR_IMAGE_URLS_THUMBS_FRONT";
     return (
       <div className='offer-container'>
-        {this.state.groupName}
         <ImageContainer device={this.state.activeDevice} imageId={imageId}/>
+        <SpecsContainer
+          groupName={this.state.groupName}
+          rating={this.state.rating}
+          device={this.state.activeDevice}
+        />
       </div>
     );
   }
