@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { OfferContainer } from './OfferContainer';
-import {ImageContainer} from "../ImageContainer/ImageContainer";
+
+jest.mock('../ImageContainer/ImageContainer', () => ({
+  ImageContainer: 'mockImageContainer'
+}));
 
 describe('OfferContainer', () => {
   const phoneData = {
@@ -26,6 +29,6 @@ describe('OfferContainer', () => {
 
   it('renders an ImageContainer component', () => {
     const offerContainer = shallow(<OfferContainer data={phoneData}/>);
-    expect(offerContainer.children().contains(<ImageContainer src={'test_image_path'} alt={'testPhone1'}/>));
+    expect(offerContainer.children().contains(<mockImageContainer src={'test_image_path'} alt={'testPhone1'}/>));
   })
 });
