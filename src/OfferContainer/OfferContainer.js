@@ -4,11 +4,11 @@ import { ImageContainer } from '../ImageContainer/ImageContainer.js'
 export class OfferContainer extends Component {
   constructor(props){
     super(props);
-    const data = props.data;
+    const phoneData = props.data;
     this.state = {
-      groupName: data[0].groupName,
-      devices: data[0].deviceSummary,
-      activeDevice: data[0].deviceSummary[0],
+      groupName: phoneData.groupName,
+      devices: phoneData.deviceSummary,
+      activeDevice: phoneData.deviceSummary[0],
     };
   }
 

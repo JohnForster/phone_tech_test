@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {OfferContainer} from "./OfferContainer/OfferContainer";
-const phoneJson = require('./phones.json');
+const phonesJson = require('./phones.json');
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <OfferContainer data={phoneJson}/>
+        <OfferContainer data={phonesJson[0]}/>
       </div>
     );
   }

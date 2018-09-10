@@ -4,7 +4,7 @@ import { OfferContainer } from './OfferContainer';
 import {ImageContainer} from "../ImageContainer/ImageContainer";
 
 describe('OfferContainer', () => {
-  const phoneData = [{
+  const phoneData = {
     "groupName": "Test Phone 1",
     "deviceSummary": [
       {
@@ -16,7 +16,7 @@ describe('OfferContainer', () => {
       },
       {"deviceId":"test1b"},
     ]
-  }];
+  };
 
   it('is initialized by passing in phone data', () => {
     const offerContainer = shallow(<OfferContainer data={phoneData}/>);
