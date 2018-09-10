@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ImageContainer } from '../ImageContainer/ImageContainer.js'
 
 export class OfferContainer extends Component {
   constructor(props){
@@ -12,8 +13,12 @@ export class OfferContainer extends Component {
   }
 
   render() {
+    const imageId = "PR_IMAGE_URLS_THUMBS_FRONT";
     return (
-      <div>{this.state.groupName}</div>
+      <div>
+        {this.state.groupName}
+        <ImageContainer device={this.state.activeDevice} imageId={imageId}/>
+      </div>
     );
   }
 }
