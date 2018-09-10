@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {OfferContainer} from "./OfferContainer/OfferContainer";
 const phonesJson = require('./phones.json');
@@ -9,8 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src="img/vodafone-big.png" className="App-logo" alt="logo" />
         </header>
         <OfferContainer data={phonesJson[0]}/>
       </div>
