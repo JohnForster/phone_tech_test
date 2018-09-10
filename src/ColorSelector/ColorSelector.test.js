@@ -25,6 +25,6 @@ describe('ColorSelector', () => {
   });
 
   it('displays the currentColor', () => {
-    expect(colorSelector.find('p.color-name').text()).toContain('TestRed')
+    expect(colorSelector.find('span.color-name').text()).toContain('TestRed')
   })
 });

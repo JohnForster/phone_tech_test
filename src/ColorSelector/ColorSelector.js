@@ -1,4 +1,4 @@
-import React, from 'react';
+import React from 'react';
 import './ColorSelector.css'
 
 export function ColorSelector(props) {
@@ -20,7 +20,7 @@ export function ColorSelector(props) {
 
   return (
     <div className='color-selector'>
-      <p>Colour: </p><p className='color-name'>{props.currentColor}</p>
+      <p>Colour: <span className='color-name'>{props.currentColor}</span></p>
       {generateSquares(props.colors)}
     </div>
   )
