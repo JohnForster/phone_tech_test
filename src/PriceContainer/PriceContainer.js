@@ -7,11 +7,15 @@ export function PriceContainer(props) {
   const monthlyCost = priceInfo.bundlePrice.monthlyPrice.gross;
   return (
     <div className="price-container">
-      <div className="upfront-cost">
-        From £{upfrontCost} upfront cost
+      <div className="upfront-cost price-box">
+        From £
+        <span className="price">{upfrontCost}</span>
+         upfront cost
       </div>
-      <div className="monthly-cost">
-        From £{monthlyCost} upfront cost
+      <div className="monthly-cost price-box">
+        From £
+        <span className="price">{monthlyCost}</span>
+         upfront cost
       </div>
     </div>
   )
