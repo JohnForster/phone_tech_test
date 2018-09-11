@@ -1,4 +1,4 @@
-## John Forster Vodafone Tech Test
+# John Forster Vodafone Tech Test
 A simple React application that displays a phone, along with colour and capacity options. A monthly and up front price is generated when a colour and capacity are chosen.
 
 ## Usage
