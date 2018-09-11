@@ -8,14 +8,14 @@ export function PriceContainer(props) {
   return (
     <div className="price-container">
       <div className="upfront-cost price-box">
-        From £
-        <span className="price">{upfrontCost}</span>
-         upfront cost
+        from
+        <p className="price"> £{upfrontCost}</p>
+        upfront cost
       </div>
       <div className="monthly-cost price-box">
-        From £
-        <span className="price">{monthlyCost}</span>
-         upfront cost
+        when you pay
+        <p className="price"> £{monthlyCost}</p>
+         a month
       </div>
     </div>
   )

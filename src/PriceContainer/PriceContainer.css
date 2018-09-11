@@ -1,18 +1,21 @@
 .price-container {
-  background-color: lightgrey;
+  background-color: gainsboro;
   float: left;
-  margin: 5px;
+  margin: 15px 5px;
   clear: left;
   width: 90%;
+  border-radius: 10px;
 }
 
 .price-box {
+  margin: 5px 10px;
   display: inline-block;
-  width: 45%;
-  margin: 0 auto;
+  width: 175px;
 }
 
 .price {
   font-size: 25px;
-  color: maroon;
+  font-weight: bold;
+  color: #e60000;
+  margin: 0;
 }
