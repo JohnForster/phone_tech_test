@@ -5,7 +5,6 @@ import {CapacitySelector} from "../CapacitySelector/CapacitySelector";
 import {PriceContainer} from "../PriceContainer/PriceContainer";
 import {Rating} from "../Rating/Rating";
 
-
 export function SpecsContainer(props) {
   return (
     <div className='specs-container'>
