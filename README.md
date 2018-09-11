@@ -2,11 +2,11 @@
 A simple React application that displays a phone, along with colour and capacity options. A monthly and up front price is generated when a colour and capacity are chosen.
 
 ## Usage
-Visit **\<enter heroku url here\>** or alternatively:
+Visit http://vodafone-tech-test.herokuapp.com or alternatively:
 * Clone this repo and navigate to the folder on your local machine.
-* Run npm install (requires Node to be installed)
-* Run npm start
-* If it doesn't open automatically, navigate to localhost:3000 in your browser.
+* Run `npm install` (requires Node to be installed)
+* Run `npm start`
+* If it doesn't open automatically, navigate to `localhost:3000` in your browser.
 
 ## Decisions
 #### React
@@ -17,11 +17,14 @@ Despite the attractiveness of using such a simple stack, I ultimately decided th
 #### Testing
 I chose Jest for testing, as this is the framework I have had the most experience with, and is included when building a simple react application with `create-react-app`, requiring additional set up.
 
-I also used Enzyme for snapshot testing.
+I also used Enzyme for snapshot testing, and jest-enzyme to allow usage of matchers such as `toHaveStyle()`
 
 ## Process
 #### Step 0 - Mock Up
 In order to get a feel for how the app would fit together, I generated a basic HTML/CSS skeleton for each component in a separate repo, and added a black border for visualisation.
+
+<a href="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8"><img  src="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8" width=350/></a>
+<a href="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9"><img src="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9" width=350/></a>
 
 #### Step 1 - OfferContainer
 The first step was to create the outside container for the offers. I decided not to put the Image, Specifications and Price directly into the App, as this reduces how reusable the components are. Instead I created an OfferContainer component, which would contain a separate ImageContainer and SpecsContainer, allowing easy modification to allow multiple phones to be displayed within one page.
@@ -33,10 +36,23 @@ I wanted as much of the state as possible to be contained within the OfferContai
 The Specs container was designed to carry the rest of the information about the chosen phone, including the name, rating, description, colour selection, capacity selection and price. These would be further broken down into components to keep ensure that the single responsibility principle was maintained.
 
 #### Step 4 - Selectors
-Two selector components were created, for the colour and memory capacity of the phone. These took functions as props which were executed on selection. Functions within the OfferContainer component that could change the phone by selection were passed down into the selectors as props.
+Two selector components were created, for the colour and memory capacity of the phone. These took functions as props which were executed on selection. Functions were passed down as props from the OfferContainer into the selectors that could change the current device, by selecting specific colors or storage capacities.
 
+#### Step 5 - PriceContainer
+A simple price container was created to display the upfront and monthly costs, which were determined from the current device.
 
-<a href="https://preview.ibb.co/mcAYep/mock_up.png"><img  src="https://preview.ibb.co/mcAYep/mock_up.png" width=350/></a>
-<a href="https://preview.ibb.co/hOVAQU/mock_up_code.png"><img src="https://preview.ibb.co/hOVAQU/mock_up_code.png" width=350/></a>
+#### Step 6 - Rating
+The star rating component was added that converts the given rating into a percentage, and sets that as the width for a set of red stars overlaid over grey stars in the background.
+
+The final product looks like this:
+
+<a href="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy"><img  src="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy" width=350/></a>
+
+#### Step 7 - Adapting for Mobile
+While I was happy with the way the app looked, it didn't scale properly when viewed on a mobile device, so I adjusted the css of a few files to better allow scaling.
+
+This can be seen below:
+
+<a align="center" href="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_"><img src="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_" width=200/></a>
 
 
