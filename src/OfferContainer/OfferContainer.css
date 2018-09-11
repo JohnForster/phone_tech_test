@@ -1,4 +1,5 @@
 .offer-container {
+  box-sizing:border-box;
   width: 100%;
   padding: 30px;
   text-align: center;

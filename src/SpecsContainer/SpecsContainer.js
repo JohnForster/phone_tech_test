@@ -1,6 +1,7 @@
 import React from 'react';
 import './SpecsContainer.css'
 import {ColorSelector} from "../ColorSelector/ColorSelector";
+import {CapacitySelector} from "../CapacitySelector/CapacitySelector";
 
 export function SpecsContainer(props) {
   return (
@@ -12,6 +13,11 @@ export function SpecsContainer(props) {
         colors={props.phoneColors}
         currentColor={props.device.colourName}
         onSquareClick={props.selectColor}
+      />
+      <CapacitySelector
+        capacities={props.phoneCapacities}
+        currentCapacity={props.device.memory}
+        onSquareClick={props.selectCapacity}
       />
     </div>
   )

@@ -38,4 +38,12 @@ describe('OfferContainer', () => {
       expect(offerContainer.state().activeDevice.deviceId).toEqual("test1b")
     })
   })
+
+  describe('handleCapacityChange', () => {
+    it('changes the active device based on colour', () => {
+      expect(offerContainer.state().activeDevice.deviceId).toEqual("test1a");
+      offerContainer.instance().handleCapacityChange('20GB');
+      expect(offerContainer.state().activeDevice.deviceId).toEqual("test2a")
+    })
+  })
 });

@@ -13,8 +13,10 @@ export class OfferContainer extends Component {
       devices: phoneData.deviceSummary,
       activeDevice: phoneData.deviceSummary[0],
       colors: this.getColors(phoneData.deviceSummary),
+      capacities: this.getCapacities(phoneData.deviceSummary)
     };
     this.handleColorChange = this.handleColorChange.bind(this)
+    this.handleCapacityChange = this.handleCapacityChange.bind(this)
   }
 
   getColors(devices) {
@@ -22,11 +24,23 @@ export class OfferContainer extends Component {
     return [...new Set(allColors)]
   }
 
+  getCapacities(devices) {
+    const allCapacities = devices.map((device) => device.memory);
+    return [...new Set(allCapacities)]
+  }
+
   handleColorChange(hex){
     const newDevice = this.state.devices.find((device) => {
       return device.memory === this.state.activeDevice.memory && device.colourHex === hex
     });
     this.setState({activeDevice: newDevice})
+  }
+
+  handleCapacityChange(memory){
+    const newDevice = this.state.devices.find((device) => {
+      return device.colourHex === this.state.activeDevice.colourHex && device.memory === memory
+    });
+    this.setState({activeDevice: newDevice});
   }
 
   render() {
@@ -40,6 +54,8 @@ export class OfferContainer extends Component {
           device={this.state.activeDevice}
           phoneColors={this.state.colors}
           selectColor={this.handleColorChange}
+          phoneCapacities={this.state.capacities}
+          selectCapacity={this.handleCapacityChange}
         />
       </div>
     );
