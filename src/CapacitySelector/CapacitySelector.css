@@ -1,0 +1,19 @@
+.capacity-selector {
+  float: left;
+  margin-left: 5px;
+  width: 200px;
+}
+
+.capacity-square {
+  display: inline-block;
+  float: left;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  margin: 0 2px;
+  padding: 0;
+}
+
+.capacity-name {
+  font-weight: bold;
+}
