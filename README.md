@@ -23,8 +23,8 @@ I also used Enzyme for snapshot testing, and jest-enzyme to allow usage of match
 #### Step 0 - Mock Up
 In order to get a feel for how the app would fit together, I generated a basic HTML/CSS skeleton for each component in a separate repo, and added a black border for visualisation.
 
-<a href="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8"><img  src="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8" width=350/></a>
-<a href="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9"><img src="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9" width=350/></a>
+<a href="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8"><img  src="https://drive.google.com/uc?id=1OlcVP20GAd_3HJqmbhcvBcZqRpP66Cj8" width=400/></a>
+<a href="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9"><img src="https://drive.google.com/uc?id=1lxwmRCub7y_0NTB1-4HQQWa14VuoDfw9" width=400/></a>
 
 #### Step 1 - OfferContainer
 The first step was to create the outside container for the offers. I decided not to put the Image, Specifications and Price directly into the App, as this reduces how reusable the components are. Instead I created an OfferContainer component, which would contain a separate ImageContainer and SpecsContainer, allowing easy modification to allow multiple phones to be displayed within one page.
@@ -46,13 +46,13 @@ The star rating component was added that converts the given rating into a percen
 
 The final product looks like this:
 
-<a href="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy"><img  src="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy" width=350/></a>
+<a href="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy"><img  src="https://drive.google.com/uc?id=1na8pTirKya5ZGziv0ZkPBVKdwpKkdxgy" width=400/></a>
 
 #### Step 7 - Adapting for Mobile
 While I was happy with the way the app looked, it didn't scale properly when viewed on a mobile device, so I adjusted the css of a few files to better allow scaling.
 
 This can be seen below:
 
-<a align="center" href="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_"><img src="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_" width=200/></a>
+<a align="center" href="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_"><img src="https://drive.google.com/uc?id=1ap7leHhRcACwhJz-dYlannoFoyX3lRP_" width=300/></a>
 
 
