@@ -23,6 +23,19 @@ I also used Enzyme for snapshot testing.
 #### Step 0 - Mock Up
 In order to get a feel for how the app would fit together, I generated a basic HTML/CSS skeleton for each component in a separate repo, and added a black border for visualisation.
 
+#### Step 1 - OfferContainer
+The first step was to create the outside container for the offers. I decided not to put the Image, Specifications and Price directly into the App, as this reduces how reusable the components are. Instead I created an OfferContainer component, which would contain a separate ImageContainer and SpecsContainer, allowing easy modification to allow multiple phones to be displayed within one page.
+
+#### Step 2 - ImageContainer
+I wanted as much of the state as possible to be contained within the OfferContainer component, and so decided that the ImageContainer would take the device to be displayed, and the ID of the desired image, but not store them as state. This means that multiple images could be included within the MerchandisingMedia field of the phone data json, and the desired image can be specified when calling the ImageContainer component.
+
+#### Step 3 - SpecsContainer
+The Specs container was designed to carry the rest of the information about the chosen phone, including the name, rating, description, colour selection, capacity selection and price. These would be further broken down into components to keep ensure that the single responsibility principle was maintained.
+
+#### Step 4 - Selectors
+Two selector components were created, for the colour and memory capacity of the phone. These took functions as props which were executed on selection. Functions within the OfferContainer component that could change the phone by selection were passed down into the selectors as props.
+
+
 <a href="https://preview.ibb.co/mcAYep/mock_up.png"><img  src="https://preview.ibb.co/mcAYep/mock_up.png" width=350/></a>
 <a href="https://preview.ibb.co/hOVAQU/mock_up_code.png"><img src="https://preview.ibb.co/hOVAQU/mock_up_code.png" width=350/></a>
 
