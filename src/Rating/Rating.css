@@ -1,0 +1,23 @@
+.star-rating {
+  display: inline-block;
+  color: gainsboro;
+  font-size: 20px;
+  height: 20px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+}
+.star-rating-top {
+   color: #e60000;
+   padding: 0;
+   position: absolute;
+   z-index: 1;
+   display: block;
+   overflow: hidden;
+}
+.star-rating-bottom {
+   padding: 0;
+   display: block;
+   z-index: 0;
+ }
