@@ -5,12 +5,20 @@ import {SpecsContainer} from "./SpecsContainer";
 jest.mock('../ColorSelector/ColorSelector', () => ({
   ColorSelector: 'mockColorSelector'
 }));
+jest.mock('../CapacitySelector/CapacitySelector', () => ({
+  CapacitySelector: 'mockCapacitySelector'
+}));
+jest.mock('../PriceContainer/PriceContainer', () => ({
+  PriceContainer: 'mockPriceContainer'
+}));
 
 describe('SpecsContainer', () => {
   const mockFunction = jest.fn();
-  const groupName = 'TestPhone 1', rating = '3.3', description = 'This is a test phone', colourName = 'testRed';
-  const activeDevice = { displayDescription: description, colourName: colourName };
+  const groupName = 'TestPhone 1', rating = '3.3', description = 'This is a test phone'
+  const colourName = 'testRed', memory = '1gb';
+  const activeDevice = { displayDescription: description, colourName: colourName, memory: memory };
   const colors = ['#f00','#0f0','#00f'];
+  const capacities = ['1gb', '2gb', '3gb'];
   const specsContainer = shallow(
     <SpecsContainer
       groupName={groupName}
@@ -18,6 +26,8 @@ describe('SpecsContainer', () => {
       device={activeDevice}
       phoneColors={colors}
       selectColor={mockFunction}
+      phoneCapacities={capacities}
+      selectCapacity={mockFunction}
     />
   );
 
@@ -40,6 +50,24 @@ describe('SpecsContainer', () => {
         colors={colors}
         currentColor={colourName}
         onSquareClick={mockFunction}
+      />
+    ))
+  })
+
+  it('renders a CapacitySelector component', () => {
+    expect(specsContainer.children().contains(
+      <mockCapacitySelector
+        capacities={capacities}
+        currentCapacity={memory}
+        onSquareClick={mockFunction}
+      />
+    ))
+  })
+
+  it('renders a ColorSelector component', () => {
+    expect(specsContainer.children().contains(
+      <priceContainer
+        device={activeDevice}
       />
     ))
   })

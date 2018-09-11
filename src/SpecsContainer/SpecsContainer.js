@@ -2,6 +2,8 @@ import React from 'react';
 import './SpecsContainer.css'
 import {ColorSelector} from "../ColorSelector/ColorSelector";
 import {CapacitySelector} from "../CapacitySelector/CapacitySelector";
+import {PriceContainer} from "../PriceContainer/PriceContainer";
+
 
 export function SpecsContainer(props) {
   return (
@@ -19,6 +21,7 @@ export function SpecsContainer(props) {
         currentCapacity={props.device.memory}
         onSquareClick={props.selectCapacity}
       />
+      <PriceContainer device={props.device}/>
     </div>
   )
 }
