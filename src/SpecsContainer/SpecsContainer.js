@@ -3,13 +3,14 @@ import './SpecsContainer.css'
 import {ColorSelector} from "../ColorSelector/ColorSelector";
 import {CapacitySelector} from "../CapacitySelector/CapacitySelector";
 import {PriceContainer} from "../PriceContainer/PriceContainer";
+import {Rating} from "../Rating/Rating";
 
 
 export function SpecsContainer(props) {
   return (
     <div className='specs-container'>
       <h1>{props.groupName}</h1>
-      <p>Rating: {props.rating}</p>
+      <Rating rating={props.rating}/>
       <p>{props.device.displayDescription}</p>
       <ColorSelector
         colors={props.phoneColors}

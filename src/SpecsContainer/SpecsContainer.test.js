@@ -11,6 +11,9 @@ jest.mock('../CapacitySelector/CapacitySelector', () => ({
 jest.mock('../PriceContainer/PriceContainer', () => ({
   PriceContainer: 'mockPriceContainer'
 }));
+jest.mock('../Rating/Rating', () => ({
+  Rating: 'mockRating'
+}));
 
 describe('SpecsContainer', () => {
   const mockFunction = jest.fn();
@@ -66,8 +69,16 @@ describe('SpecsContainer', () => {
 
   it('renders a ColorSelector component', () => {
     expect(specsContainer.children().contains(
-      <priceContainer
+      <mockPriceContainer
         device={activeDevice}
+      />
+    ))
+  })
+
+  it('renders a Rating component', () => {
+    expect(specsContainer.children().contains(
+      <mockRating
+        rating={rating}
       />
     ))
   })
