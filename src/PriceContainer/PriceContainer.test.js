@@ -10,5 +10,10 @@ describe('PriceContainer', () => {
   it('Should display the upfront cost', () => {
     const upfrontCost = testPhone.priceInfo.hardwarePrice.oneOffPrice.gross;
     expect(priceContainer.find('div.upfront-cost').text().includes(`£${upfrontCost}`))
-  })
+  });
+
+  it('Should display the monthly cost', () => {
+    const monthlyCost = testPhone.priceInfo.bundlePrice.monthlyPrice.gross;
+    expect(priceContainer.find('div.monthly-cost').text().includes(`£${monthlyCost}`))
+  });
 });
