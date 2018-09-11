@@ -6,10 +6,12 @@
 
 .capacity-square {
   display: inline-block;
+  font-weight: bold;
   float: left;
   height: 30px;
   width: 30px;
-  border: 1px solid black;
+  border: 1px solid darkgray;
+  border-radius: 10px;
   margin: 0 2px;
   padding: 0;
 }
